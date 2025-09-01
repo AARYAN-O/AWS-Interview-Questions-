@@ -1,8 +1,8 @@
-##  EMR Questions Categorized
+# EMR Questions Categorized
 
 1. Conceptual
 
-What is EMR, and when would you use it? ✅
+## What is EMR, and when would you use it? ✅
 
 What Is Amazon EMR?
 Amazon EMR (Elastic MapReduce) is a cloud service that lets you easily run big data frameworks—like Apache Spark, Hadoop, Hive, and others—on clusters of computers managed by AWS.
