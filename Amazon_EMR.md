@@ -57,7 +57,7 @@ Task nodes: Process data only (no storage, optional, flexible)
 
 2. Scenario-Based
 
-You have 5 TB of log data in S3 to process daily. How would you use EMR? ✅
+## You have 5 TB of log data in S3 to process daily. How would you use EMR? ✅
 
 EMR is parallel data processing framework. Since the data is very large it is suitable. Additionally, since s3 is being used, wee can use EMR to get easily connected to AWS services.
 
@@ -66,7 +66,7 @@ AWS Lambda: Good for small, event-driven tasks, but not suitable for very large 
 Athena: Ideal for ad hoc SQL queries on S3 data, but not for heavy transformation or batch processing.
 On-premises clusters: More control, but higher maintenance and less elasticity.
 
-How do you optimize EMR costs? ✅
+## How do you optimize EMR costs? ✅
 
 For scheduled, batch-oriented, or periodic processing (like your daily 5 TB log job), transient clusters are usually the best fit.
 Long-running clusters are better for continuous, interactive, or stateful workloads.
@@ -102,7 +102,6 @@ Don’t leave clusters running when not in use.
 4. Optimize Data Storage and Access
 Read/write directly from S3:
 Avoid unnecessary HDFS storage; S3 is cheaper and more scalable.
-
 
 Efficient data formats:
 Use columnar formats like Parquet or ORC to reduce storage and speed up processing.
@@ -149,7 +148,7 @@ For stream processing ( using kafka) , we need to use the long running clusters
 
 3. Troubleshooting
 
-A Spark job on EMR is failing due to out-of-memory errors. ✅
+## A Spark job on EMR is failing due to out-of-memory errors. ✅
 
 1. Understand the Error Context
 
@@ -230,6 +229,6 @@ Key Takeaway
 Out-of-memory errors are usually due to insufficient memory allocation, large partitions, or inefficient job design.
 By tuning Spark configs, optimizing data partitioning, and scaling resources, you can resolve most OOM issues.
 
-How do you handle EMR job failures on spot instances? ✅
+## How do you handle EMR job failures on spot instances? ✅
 
-Your EMR job is running very slowly. ✅
+## Your EMR job is running very slowly. ✅
