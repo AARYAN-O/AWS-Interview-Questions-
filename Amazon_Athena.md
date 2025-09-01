@@ -1,13 +1,13 @@
 
-Basic Athena Questions
+# Basic Athena Questions
 
-1. What is Amazon Athena and how does it differ from Redshift and EMR?
-Answer: Athena is a serverless, interactive query service that allows you to run SQL directly on data in S3 without managing infrastructure. Unlike Redshift, it does not store data in a warehouse; unlike EMR, it does not run persistent clusters—Athena spins up a query engine on demand.
+## 1. What is Amazon Athena and how does it differ from Redshift and EMR?
+Answer: Athena is a serverless, interactive query servic that allows you to run SQL directly on data in S3 without managing infrastructure. Unlike Redshift, it does not store data in a warehouse; unlike EMR, it does not run persistent clusters—Athena spins up a query engine on demand.
 
-2. What underlying technology does Athena use to run queries?
+## 2. What underlying technology does Athena use to run queries?
 Answer: Athena uses Presto (Trino) SQL engine to run distributed queries on S3 data.
 
-3. What file formats are supported in Athena? Which ones are most efficient?
+## 3. What file formats are supported in Athena? Which ones are most efficient?
 Answer: Supports CSV, JSON, Avro, ORC, Parquet, and more. Columnar formats like Parquet or ORC are most efficient for large datasets because they reduce scan size and improve query performance.
 
 4. How does Athena pricing work?
