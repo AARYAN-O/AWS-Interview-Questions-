@@ -232,3 +232,29 @@ By tuning Spark configs, optimizing data partitioning, and scaling resources, yo
 ## How do you handle EMR job failures on spot instances? ✅
 
 ## Your EMR job is running very slowly. ✅
+
+
+
+
+( What are spot and reserved instances ?
+
+ Spot Instances vs. Reserved Instances
+Spot Instances
+
+What are they?
+AWS sells unused EC2 capacity at steep discounts (up to 90% off on-demand prices). These are called spot instances.
+Key characteristics:
+
+Cheap, but interruptible: AWS can reclaim them at any time with a 2-minute warning.
+Best for: Fault-tolerant, flexible workloads (e.g., big data batch jobs, stateless processing).
+Risk: Your workload may be interrupted and need to restart or recover.
+
+Reserved Instances
+
+What are they?
+You commit to using specific EC2 instance types for a 1- or 3-year term in exchange for a significant discount (up to 75%) over on-demand pricing.
+Key characteristics:
+
+Stable, predictable cost: You pay whether you use the instance or not.
+Best for: Steady-state, predictable workloads (e.g., always-on services, long-running clusters).
+No interruption risk: You have guaranteed capacity. )
