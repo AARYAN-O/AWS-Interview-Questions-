@@ -68,8 +68,84 @@ On-premises clusters: More control, but higher maintenance and less elasticity.
 
 How do you optimize EMR costs? ✅
 
+For scheduled, batch-oriented, or periodic processing (like your daily 5 TB log job), transient clusters are usually the best fit.
+Long-running clusters are better for continuous, interactive, or stateful workloads.
 
 
+How to Optimize Amazon EMR Costs:
+
+1. Use Spot and Reserved Instances
+
+Spot Instances:
+Use spot pricing for task nodes (compute-only, no data storage).
+Spot instances can be up to 90% cheaper than on-demand, ideal for non-critical or fault-tolerant workloads.
+
+Reserved Instances:
+For steady, predictable workloads, reserve core nodes to lock in lower rates.
+
+2. Right-Size Your Cluster
+
+Choose the right instance types:
+Match compute, memory, and storage to your workload (e.g., compute-optimized for Spark, memory-optimized for Hive).
+Start small and scale:
+Begin with minimal resources, then monitor and adjust based on actual usage.
+Leverage EMR’s auto-scaling:
+Automatically add/remove task nodes based on workload demand.
+
+3. Use Transient (On-Demand) Clusters
+
+Spin up clusters only when needed:
+For batch or scheduled jobs, launch clusters on demand and terminate them when processing is complete.
+Avoid idle resources:
+Don’t leave clusters running when not in use.
+
+4. Optimize Data Storage and Access
+Read/write directly from S3:
+Avoid unnecessary HDFS storage; S3 is cheaper and more scalable.
+
+
+Efficient data formats:
+Use columnar formats like Parquet or ORC to reduce storage and speed up processing.
+
+Partition data:
+Partition S3 data (e.g., by date) to minimize the amount read per job.
+
+5. Tune Your Jobs and Workflows
+
+Efficient code:
+Optimize Spark/Hadoop jobs to avoid unnecessary shuffles, joins, or data scans.
+
+
+Cache intermediate results:
+Use Spark caching judiciously to avoid recomputation.
+
+Monitor and profile jobs:
+Use CloudWatch and EMR metrics to identify bottlenecks and over-provisioning.
+
+6. Leverage EMR Features
+
+EMRFS consistent view:
+Ensures reliable S3 reads/writes, reducing failed jobs and reruns.
+Cluster reconfiguration:
+Change instance counts/types on the fly without downtime.
+
+7. Review and Clean Up Regularly
+
+Terminate unused clusters:
+Set up automated termination for idle clusters.
+Delete obsolete data:
+Remove old logs or intermediate files from S3 to avoid unnecessary storage costs.
+Example: Cost-Optimized Daily Batch Workflow
+
+
+Schedule cluster launch just before daily processing - so that cluster launch does not takes a lot of time 
+Use spot instances for task nodes, on-demand or reserved for core nodes.
+Process data directly from S3 using Spark.
+Write results back to S3 in Parquet format.
+Cluster auto-terminates after job completion.
+
+For batch processing ( in which we are sure about the timings) , we need to use the transient clusters
+For stream processing ( using kafka) , we need to use the long running clusters
 
 3. Troubleshooting
 
