@@ -51,12 +51,23 @@ When would you choose EMR over Redshift? ✅
 
 What’s the difference between core and task nodes? ✅
 
+Core nodes are those nodes that do the actual processing in the Amazon EMR environment where as task nodes are those nodes which are optional and maybe used only in case the core nodes need an extra helping hand.
+Core nodes: Process data and store it in HDFS (persistent, required).
+Task nodes: Process data only (no storage, optional, flexible)
 
 2. Scenario-Based
 
 You have 5 TB of log data in S3 to process daily. How would you use EMR? ✅
 
+EMR is parallel data processing framework. Since the data is very large it is suitable. Additionally, since s3 is being used, wee can use EMR to get easily connected to AWS services.
+
+AWS Glue: Fully serverless, great for ETL, but less flexible for custom or complex processing.
+AWS Lambda: Good for small, event-driven tasks, but not suitable for very large or long-running jobs.
+Athena: Ideal for ad hoc SQL queries on S3 data, but not for heavy transformation or batch processing.
+On-premises clusters: More control, but higher maintenance and less elasticity.
+
 How do you optimize EMR costs? ✅
+
 
 
 
