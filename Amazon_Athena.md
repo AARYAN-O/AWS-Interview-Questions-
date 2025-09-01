@@ -145,6 +145,7 @@ Consider splitting/merging very small files.
 
 ## 29. Migrate Hive table to Athena?
 Answer: Use Glue Data Catalog to import Hive metadata, ensure table format (Parquet/ORC), and adjust partitioning if needed.
+We can use glue catalog to import give metadata from different sources.
 
 ## 30. Row-level security / fine-grained access?
 Answer: Use AWS Lake Formation to restrict access by row/column, or IAM policies to restrict query execution.
