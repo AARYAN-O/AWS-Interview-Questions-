@@ -43,6 +43,16 @@ If your needs are simple or you want a fully serverless solution, consider alter
 
 Why EMR instead of Glue? ✅
 
+Feature/Need EMR Glue
+
+Cluster management Yes (full control) No (serverless)
+Custom code & libraries Yes Limited
+Open-source tool support Wide (Spark, Hive, etc.) Spark (ETL only)
+Job complexity Any (simple to complex) Simple to moderate
+Long-running jobs Yes No
+Machine learning/data science Yes Limited
+Cost model Pay for cluster uptime Pay per job/run time
+
 When would you choose EMR over Redshift? ✅
 
 What’s the difference between core and task nodes? ✅
